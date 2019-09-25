@@ -730,7 +730,7 @@ function render(variablesz = {}) {
 window.onload = function () {
   window.variablesz = {
     // if includeCover is true the algorithm should
-    includeCover: true,
+    includeCover: false,
     // this is the url of the image that will used as background for the profile cover
     background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
     // this is the url for the profile avatar

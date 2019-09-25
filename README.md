@@ -1,3 +1,14 @@
+## Installation
+
+1. Clone this repository (if using Gitpod this is already done)
+2. Install the NPM packages: `npm install`
+3. Buid for the first time: `npm run build`
+4. Start updating the `render` function inside the `index.js` file, that is the only file and function you have to update.
+5. Run server using: `python3 -m http.server 3000`
+6. Edit js file in src/js, NOT assets (this is the bundled file that will be overwritten when using "npm run build")
+
+Note: every time you update any file you will have to build again in order to update the bundle.
+
 # Conditional Profile Card
 
 As a web developer, you will be creatings lots and lots of dynamic HTML using Javascript based algorithms.
@@ -42,11 +53,3 @@ This is an example of a possible HTML output, you will have to replace the name,
   </ul>
 </div>
 ```
-## Installation
-
-1. Clone this repository.
-2. Install the NPM packages: `npm install`
-3. Buid for the first time: `npm run build`
-4. Start updating the `render` function inside the `index.js` file, that is the only file and function you have to update.
-
-Note: every time you update any file you will have to build again in order to update the bundle.
