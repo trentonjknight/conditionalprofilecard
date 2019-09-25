@@ -736,11 +736,11 @@ window.onload = function () {
     // this is the url for the profile avatar
     avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
     // social media bar position (left or right)
-    socialMediaPosition: "left",
+    socialMediaPosition: "right",
     // social media usernames
-    twitter: "PaolaCastro",
-    github: "helloflatworld",
-    linkedin: "Naila",
+    twitter: "something",
+    github: "something",
+    linkedin: "something",
     instagram: null,
     name: null,
     lastname: null,
