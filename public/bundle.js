@@ -701,24 +701,39 @@ __webpack_require__.r(__webpack_exports__);
  *  This function is called every time the user changes types or changes any input
  */
 function render(variablesz = {}) {
+  let name = `${variablesz.name}`;
+  let lastname = `${variablesz.lastname}`;
+  let role = `${variablesz.role}`;
+  let instagram = `${variablesz.instagram}`;
+  let twitter = `${variablesz.twitter}`;
+  let linkedin = `${variablesz.linkedin}`;
+  let country = `${variablesz.country}`;
+  let city = `${variablesz.city}`;
+
   // here we ask the logical questions to make decisions on how to build the html
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variablesz.background}" /></div>`;
   let githubLink = `${variablesz.github}`;
   if (variablesz.includeCover == false) cover = "<div class='cover'></div>";
-
+  if (variablesz.role === null) variablesz.role = "Occupation";
+  if (variablesz.name === null) variablesz.name = "First Name";
+  if (variablesz.lastname === null) variablesz.lastname = "Last Name";
+  if (variablesz.city === null) variablesz.city = "City";
+  if (variablesz.country === null) variablesz.country = "Country of Residence";
+  if (variablesz.twitter === null) variablesz.twitter = "exampleurl";
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${window.variablesz.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h1>${variablesz.name} ${variablesz.lastname}</h1>
+          <h2>${variablesz.role}</h2>
+          <h3>${variablesz.city}</h3>
+          <h3>${variablesz.country}</h3>
           <ul class="position-right">
             <li><a href="https://twitter.com/${variablesz.twitter}"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/${githubLink}"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://github.com/${variablesz.githubLink}"><i class="fa fa-github"></i></a></li>
             <li><a href="https://linkedin.com/${variablesz.linkedin}"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://instagram.com/${variablesz.instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -738,9 +753,9 @@ window.onload = function () {
     // social media bar position (left or right)
     socialMediaPosition: "right",
     // social media usernames
-    twitter: "something",
-    github: "something",
-    linkedin: "something",
+    twitter: null,
+    github: null,
+    linkedin: null,
     instagram: null,
     name: null,
     lastname: null,
