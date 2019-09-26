@@ -13,11 +13,15 @@ function render(variablesz = {}) {
   let linkedin = `${variablesz.linkedin}`;
   let country = `${variablesz.country}`;
   let city = `${variablesz.city}`;
-
+  let githubLink = `${variablesz.github}`;
   // here we ask the logical questions to make decisions on how to build the html
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variablesz.background}" /></div>`;
-  let githubLink = `${variablesz.github}`;
+
+  if (variablesz.socialMediaPosition === "right")
+    variablesz.socialMediaPosition = "right";
+  if (variablesz.socialMediaPosition === "left")
+    variablesz.socialMediaPosition = "left";
   if (variablesz.includeCover == false) cover = "<div class='cover'></div>";
   if (variablesz.role === null) variablesz.role = "Occupation";
   if (variablesz.name === null) variablesz.name = "First Name";
@@ -25,15 +29,18 @@ function render(variablesz = {}) {
   if (variablesz.city === null) variablesz.city = "City";
   if (variablesz.country === null) variablesz.country = "Country of Residence";
   if (variablesz.twitter === null) variablesz.twitter = "exampleurl";
+  if (variablesz.githubLink === null) variablesz.githubLink = "exampleurl";
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${window.variablesz.avatarURL}" class="photo" />
+
           <h1>${variablesz.name} ${variablesz.lastname}</h1>
           <h2>${variablesz.role}</h2>
           <h3>${variablesz.city}</h3>
           <h3>${variablesz.country}</h3>
-          <ul class="position-right">
+
+          <ul class="${variablesz.socialMediaPosition}">
             <li><a href="https://twitter.com/${
               variablesz.twitter
             }"><i class="fa fa-twitter"></i></a></li>
